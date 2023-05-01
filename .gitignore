@@ -1,0 +1,7 @@
+﻿################################################################################
+# Diese .gitignore-Datei wurde von Microsoft(R) Visual Studio automatisch erstellt.
+################################################################################
+
+/homepage/.vs/homepage/FileContentIndex
+/homepage/.vs/homepage/v17
+/homepage/obj/Debug

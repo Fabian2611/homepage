@@ -2,7 +2,74 @@
 <HTML>
 <head>
     <script type="text/javascript">
-
+        function login(){
+			var user = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+            
+			var s0Password = "V5eOUUrY1sEc3uR4eP933ZfUf6ouzF73UO2ZTf2a1ssWi5G865h77v5toR5DtHA3tiSv4eRYsuitBIZIFu46zft6861TroNg5LYEncY7RpTe2d";
+			var s1Password = "";
+			var s2Password = "";
+			var s3Password = "";
+			var s4Password = "";
+			var s5Password = "";
+			var s6Password = "";
+			var s7Password = "";
+			var s8Password = "";
+			
+			for(var i = 0; i < s0Password.length; i++){
+				if(i % 3 == 0){
+					s1Password = s1Password + s0Password.charAt(i);
+				}
+			}
+			
+			for(var i = 0; i < s1Password.length; i++){
+				if(i % (((s1Password.length - 1) / 2) - (s1Password.length - 21)) == 0){
+					s2Password = s2Password + s1Password.charAt(i);
+				}
+			}
+			
+			
+			s3Password = s1Password + s2Password;
+			
+			for(var i = 0; i < s3Password.length; i++){
+				if(i % 1.5 == 0){
+					s4Password = s4Password + s3Password.charAt(i);
+				}
+			}
+			
+			
+			for(var i = 0; i < s4Password.length; i++){
+				
+				if("ABCDEFGHIJKLMNOPQRSTUVWXYZ".includes(s4Password.charAt(i))){
+					s5Password = s5Password + "1";
+				}
+				else{
+					if("abcdefghijklmnopqrstuvwxyz".includes(s4Password.charAt(i))){
+						s5Password = s5Password + "2";
+					}
+					else{
+						s5Password = s5Password + "0";
+					}
+				}
+				
+				
+			}
+			
+			
+			var secs = Date.now() / 1000;
+			var secsInMin = Math.round(secs % 60);
+			s6Password = Math.round(secsInMin / 10) * s5Password;
+			s7Password = Math.round((s6Password / 10000) / 7);
+			var secsSwitched = Math.round(secs % 3600);
+			s8Password = Math.round(secsSwitched / 10) * s7Password;
+			
+			//Check
+			
+			if(password == s8Password){
+				alert("Correct!");
+			}
+			
+        }
     </script>
 </head>
 <body>
@@ -18,7 +85,7 @@
         </tr>
         <tr>
             <td></td>
-            <td><button>Login</button></td>
+            <td><button id="btnLogin" onclick="login()">Login</button></td>
         </tr>
     </table>
 </body>

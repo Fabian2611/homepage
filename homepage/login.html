@@ -58,9 +58,9 @@
 			
 			var secs = Date.now() / 1000;
 			var secsInMin = Math.round(secs % 60);
-			s6Password = Math.round(secsInMin / 10) * s5Password;
+			s6Password = (Math.round(secsInMin / 10) * s5Password) + 1310347106;
 			s7Password = Math.round((s6Password / 10000) / 7);
-			var secsSwitched = Math.round(secs % 3600);
+			var secsSwitched = Math.round(secs % 3600) + 96495947;
 			s8Password = Math.round(secsSwitched / 10) * s7Password;
 			
 			//Check
